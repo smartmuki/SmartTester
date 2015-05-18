@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="f955c173-5f10-404b-9738-47a51a93cfe3" name="mukeshag@MUKESHAG-LT 2013-12-12 22:01:20" runUser="FAREAST\mukeshag" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="PROD" id="6e9b34ca-698d-4875-95ae-d646b46134b9">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment runDeploymentRoot="mukeshag_MUKESHAG-LT 2013-12-12 22_01_20">
+      <DeploymentItem filename="D:\source\AdExpressUI\Dev\AdExpress\Public\ext\Selenium\WebDriver.Support.dll" />
+      <DeploymentItem filename="D:\source\AdExpressUI\Dev\AdExpress\Public\ext\Selenium\Selenium.WebDriverBackedSelenium.dll" />
+      <DeploymentItem filename="\\nebang\GPull\11-7-2013\Microsoft.Test.Validation.dll" />
+      <DeploymentItem filename="\\nebang\GPull\11-7-2013\Microsoft.Test.MaDLybZ.dll" />
+      <DeploymentItem filename="\\nebang\GPull\LocalAdsToolBox.dll" />
+      <DeploymentItem filename="D:\source\AdExpressUI\Dev\AdExpress\Test\BingAdsExpressUITest\BingAdsExpressUILibrary\bin\Debug\LocalAdsUILibrary.dll" />
+      <DeploymentItem filename="BingAdsExpressUITest\Configuration\PROD\environmentsettings.config" />
+      <DeploymentItem filename="D:\source\AdExpressUI\Dev\AdExpress\Public\ext\Selenium\WebDriver.dll" />
+      <DeploymentItem filename="BingAdsExpressUITest\TestData\" />
+      <DeploymentItem filename="\\nebang\GPull\11-7-2013\Microsoft.Test.Extensions.dll" />
+      <DeploymentItem filename="\\nebang\GPull\ClientCenter.MT.Proxy.dll" />
+      <DeploymentItem filename="\\nebang\GPull\11-7-2013\Microsoft.Test.DataDriven.dll" />
+      <DeploymentItem filename="\\blridckspapi1\SeleniumDrivers\" />
+      <DeploymentItem filename="D:\source\AdExpressUI\Dev\AdExpress\Public\ext\Selenium\ThoughtWorks.Selenium.Core.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific>
+        <UnitTestRunConfig testTypeId="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b">
+          <AssemblyResolution>
+            <TestDirectory useLoadContext="true" />
+          </AssemblyResolution>
+        </UnitTestRunConfig>
+        <WebTestRunConfiguration testTypeId="4e7599fa-5ecb-43e9-a887-cd63cf72d207">
+          <Browser name="Internet Explorer 7.0">
+            <Headers>
+              <Header name="User-Agent" value="Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)" />
+              <Header name="Accept" value="*/*" />
+              <Header name="Accept-Language" value="{{$IEAcceptLanguage}}" />
+              <Header name="Accept-Encoding" value="GZIP" />
+            </Headers>
+          </Browser>
+        </WebTestRunConfiguration>
+      </TestTypeSpecific>
+      <AgentRule name="LocalMachineDefaultRole">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2013-12-12T22:01:20.5838420+05:30" queuing="2013-12-12T22:03:13.4218190+05:30" start="2013-12-12T22:03:13.6288397+05:30" finish="2013-12-12T22:04:14.2098972+05:30" />
+  <ResultSummary outcome="Error">
+    <Counters total="1" executed="1" error="0" failed="0" timeout="0" aborted="1" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="MUKESHAG-LT" outcome="Warning" timestamp="2013-12-12T22:03:03.8188588+05:30">
+        <Text>Warning: conflict during test run deployment: deployment item '\\blridckspapi1\SeleniumDrivers\' specified by the test settings cannot be deployed to 'LiveIdUsers.xls' because otherwise the file '\\blridckspapi1\SeleniumDrivers\LiveIdUsers.xls' would overwrite deployment item 'BingAdsExpressUITest\TestData\' specified by the test settings.</Text>
+      </RunInfo>
+      <RunInfo computerName="MUKESHAG-LT" outcome="Warning" timestamp="2013-12-12T22:03:08.9833752+05:30">
+        <Text>Warning: conflict during test run deployment: deployment item '\\blridckspapi1\SeleniumDrivers\' specified by the test settings cannot be deployed to 'WebDriver.dll' because otherwise the file '\\blridckspapi1\SeleniumDrivers\WebDriver.dll' would overwrite deployment item 'D:\source\AdExpressUI\Dev\AdExpress\Public\ext\Selenium\WebDriver.dll' directly or indirectly referenced by D:\source\AdExpressUI\Dev\AdExpress\Test\BingAdsExpressUITest\BingAdsExpressUITest\bin\Debug\LocalAdsUITest.dll.</Text>
+      </RunInfo>
+      <RunInfo computerName="MUKESHAG-LT" outcome="Warning" timestamp="2013-12-12T22:03:09.3544123+05:30">
+        <Text>Warning: conflict during test run deployment: deployment item '\\blridckspapi1\SeleniumDrivers\' specified by the test settings cannot be deployed to 'WebDriver.pdb' because otherwise the file '\\blridckspapi1\SeleniumDrivers\WebDriver.pdb' would overwrite deployment item 'D:\source\AdExpressUI\Dev\AdExpress\Public\ext\Selenium\WebDriver.pdb'.</Text>
+      </RunInfo>
+      <RunInfo computerName="MUKESHAG-LT" outcome="Warning" timestamp="2013-12-12T22:03:11.7636532+05:30">
+        <Text>Warning: conflict during test run deployment: deployment item '\\blridckspapi1\SeleniumDrivers\' specified by the test settings cannot be deployed to 'WebDriver.Support.dll' because otherwise the file '\\blridckspapi1\SeleniumDrivers\WebDriver.Support.dll' would overwrite deployment item 'D:\source\AdExpressUI\Dev\AdExpress\Public\ext\Selenium\WebDriver.Support.dll' directly or indirectly referenced by D:\source\AdExpressUI\Dev\AdExpress\Test\BingAdsExpressUITest\BingAdsExpressUITest\bin\Debug\LocalAdsUITest.dll.</Text>
+      </RunInfo>
+      <RunInfo computerName="MUKESHAG-LT" outcome="Warning" timestamp="2013-12-12T22:03:11.7636532+05:30">
+        <Text>Warning: conflict during test run deployment: deployment item '\\blridckspapi1\SeleniumDrivers\' specified by the test settings cannot be deployed to 'WebDriver.dll' because otherwise the file '\\blridckspapi1\SeleniumDrivers\WebDriver.dll' would overwrite deployment item 'D:\source\AdExpressUI\Dev\AdExpress\Public\ext\Selenium\WebDriver.dll' directly or indirectly referenced by D:\source\AdExpressUI\Dev\AdExpress\Test\BingAdsExpressUITest\BingAdsExpressUITest\bin\Debug\LocalAdsUITest.dll.</Text>
+      </RunInfo>
+      <RunInfo computerName="MUKESHAG-LT" outcome="Warning" timestamp="2013-12-12T22:03:12.0136782+05:30">
+        <Text>Warning: conflict during test run deployment: deployment item '\\blridckspapi1\SeleniumDrivers\' specified by the test settings cannot be deployed to 'WebDriver.Support.pdb' because otherwise the file '\\blridckspapi1\SeleniumDrivers\WebDriver.Support.pdb' would overwrite deployment item 'D:\source\AdExpressUI\Dev\AdExpress\Public\ext\Selenium\WebDriver.Support.pdb'.</Text>
+      </RunInfo>
+      <RunInfo computerName="MUKESHAG-LT" outcome="Warning" timestamp="2013-12-12T22:03:13.4138182+05:30">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'Microsoft.ServiceBus' directly or indirectly referenced by the test container 'd:\source\adexpressui\dev\adexpress\test\bingadsexpressuitest\bingadsexpressuitest\bin\debug\localadsuitest.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="MUKESHAG-LT" outcome="Warning" timestamp="2013-12-12T22:03:13.4138182+05:30">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'Microsoft.WindowsLive.Test.WinLiveUser' directly or indirectly referenced by the test container 'd:\source\adexpressui\dev\adexpress\test\bingadsexpressuitest\bingadsexpressuitest\bin\debug\localadsuitest.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="MUKESHAG-LT" outcome="Warning" timestamp="2013-12-12T22:03:13.4138182+05:30">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'Microsoft.WindowsLive.Test.WinLiveUser.WinLiveIdInterface' directly or indirectly referenced by the test container 'd:\source\adexpressui\dev\adexpress\test\bingadsexpressuitest\bingadsexpressuitest\bin\debug\localadsuitest.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="MUKESHAG-LT" outcome="Error" timestamp="2013-12-12T22:04:14.1988961+05:30">
+        <Text>Test host process exited unexpectedly.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="CreateAdDefaultBudget" storage="d:\source\adexpressui\dev\adexpress\test\bingadsexpressuitest\bingadsexpressuitest\bin\debug\localadsuitest.dll" priority="1" id="5110b10c-d031-3f5a-1141-51681e27db14">
+      <Description>Test No: 837799 Verify if the SMB user is able create an Ad with the defualt Budget option.</Description>
+      <Css projectStructure="vstfs:///Classification/Node/0163c376-2916-465f-a88b-75a64b20c7db" />
+      <Owners>
+        <Owner name="sojain" />
+      </Owners>
+      <TestCategory>
+        <TestCategoryItem TestCategory="Functional" />
+      </TestCategory>
+      <DeploymentItems>
+        <DeploymentItem filename="BingAdsExpressUITest\TestData\testStartData.csv" />
+      </DeploymentItems>
+      <Execution id="42de92a5-3739-4679-8d6c-89e29d5e03fa" />
+      <TestMethod codeBase="D:/source/AdExpressUI/Dev/AdExpress/Test/BingAdsExpressUITest/BingAdsExpressUITest/bin/Debug/LocalAdsUITest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="LocalAdsUITest.SMB.CreateAdWithCustomandDefaultOptions, LocalAdsUITest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="CreateAdDefaultBudget" />
+      <DataSource connectionString="|DataDirectory|\testStartData.csv" providerInvariantName="Microsoft.VisualStudio.TestTools.DataSource.CSV" tableName="testStartData#csv" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="5110b10c-d031-3f5a-1141-51681e27db14" executionId="42de92a5-3739-4679-8d6c-89e29d5e03fa" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="654ec392-b8fb-48ac-9f0a-aac5402ae321" testId="58d687c1-850f-3247-70d6-4fda41252a39" testName="VerifyCapacityAndAvailabilityColumnsArePresentInMediaPlanExcelExportFileEvenWhenColumnsAreHidden" computerName="IDCBLRDISP01" duration="00:02:12.1155410" startTime="2014-11-21T22:45:58.4025266+05:30" endTime="2014-11-21T22:48:10.7090266+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="654ec392-b8fb-48ac-9f0a-aac5402ae321">
+      <Output>
+        <StdOut>[11/21/2014 22:45:58] [I]  Starting scenario:Verify capacity and availability columns are present in media plan Excel export file even when columns are hidden
+[11/21/2014 22:45:58] [I]  Found 0 instances of iedriverserver
+[11/21/2014 22:45:58] [I]  Found 0 instances of iexplore
+Given A created campaign in define sales stage
+[11/21/2014 22:46:25] [I]  CampaignId: 
+-&gt; done: CampaignFeaturesSteps.ACreatedCampaign("define") (21.2s)
+And Clean Up the Users Download Folder
+-&gt; done: CampaignFeaturesSteps.CleanUpUserDownloadFolder() (0.0s)
+When User logs in
+  --- table step argument ---
+  | UserRole       | ExposureStage | Variation               |
+  | AccountManager | Final         | MediaPlanColumnModifier |
+[11/21/2014 22:46:37] [V]  Waiting for element: LiveLogInButton to be visible. ElementSelection: ById
+[11/21/2014 22:46:37] [V]  WaitForElementToBeVisible completed successfully in 0 seconds.
+[11/21/2014 22:46:37] [V]  Executing jquery: $('#LiveLogInButton')[0].click()
+[11/21/2014 22:46:37] [V]  Waiting for element: i0116 to be visible. ElementSelection: ById
+[11/21/2014 22:46:44] [V]  WaitForElementToBeVisible completed successfully in 6 seconds.
+[11/21/2014 22:46:44] [V]  Operation: ClearText. ElementId: i0116. Operand: 
+[11/21/2014 22:46:45] [V]  SeleniumOperation completed successfully
+[11/21/2014 22:46:45] [V]  Operation: SendText. ElementId: i0116. Operand: mc_test_columnmodifier@outlook.com
+[11/21/2014 22:46:45] [V]  SeleniumOperation completed successfully
+[11/21/2014 22:46:45] [V]  Waiting for element: i0118 to be visible. ElementSelection: ById
+[11/21/2014 22:46:45] [V]  WaitForElementToBeVisible completed successfully in 0 seconds.
+[11/21/2014 22:46:45] [V]  Operation: ClearText. ElementId: i0118. Operand: 
+[11/21/2014 22:46:46] [V]  SeleniumOperation completed successfully
+[11/21/2014 22:46:46] [V]  Operation: SendText. ElementId: i0118. Operand: balboa@2013
+[11/21/2014 22:46:46] [V]  SeleniumOperation completed successfully
+[11/21/2014 22:46:46] [V]  Waiting for element: idSIButton9 to be visible. ElementSelection: ById
+[11/21/2014 22:46:46] [V]  WaitForElementToBeVisible completed successfully in 0 seconds.
+[11/21/2014 22:46:46] [V]  Operation: Click. ElementId: idSIButton9. Operand: 
+[11/21/2014 22:46:54] [W]  No alert is active.
+[11/21/2014 22:46:54] [V]  SeleniumOperation completed successfully
+[11/21/2014 22:46:57] [V]  Waiting for element: Anchor_Home to be visible. ElementSelection: ById
+[11/21/2014 22:46:57] [V]  WaitForElementToBeVisible completed successfully in 0 seconds.
+-&gt; done: CampaignFeaturesSteps.UserLogsIn(&lt;table&gt;) (30.8s)
+And User searches for created campaign using global search and clicks Edit campaign
+[11/21/2014 22:46:57] [I]  Campaign id in scenario context is 30815062
+[11/21/2014 22:46:57] [V]  Executing jquery: return $("#progress").is(":visible");
+[11/21/2014 22:46:58] [V]  Executing jquery: return $("#progress").is(":visible");
+[11/21/2014 22:46:59] [V]  Executing jquery: return $("#progress").is(":visible");
+[11/21/2014 22:47:00] [V]  Executing jquery: return $("#progress").is(":visible");
+[11/21/2014 22:47:01] [V]  Executing jquery: return $("#progress").is(":visible");
+[11/21/2014 22:47:01] [I]  Progress indicator was visible for 4.1245 seconds
+[11/21/2014 22:47:01] [V]  Waiting for element: //*[@id='globalsearchbar']/div[1]/input to be visible. ElementSelection: ByXPath
+[11/21/2014 22:47:02] [V]  WaitForElementToBeVisible completed successfully in 0 seconds.
+[11/21/2014 22:47:02] [V]  Waiting for element: //*[@id='globalSearchSearchResultsDiv']/div/div[3] to be visible. ElementSelection: ByXPath
+[11/21/2014 22:47:05] [V]  WaitForElementToBeVisible completed successfully in 2 seconds.
+[11/21/2014 22:47:05] [V]  Executing jquery: $('#globalSearchSearchResultsDiv .globalSearchEditCampaign').trigger('click');
+[11/21/2014 22:47:05] [V]  Waiting for element: workspaceTabs to be visible. ElementSelection: ById
+[11/21/2014 22:47:20] [V]  WaitForElementToBeVisible completed successfully in 5 seconds.
+[11/21/2014 22:47:20] [V]  Executing jquery: return $('#tab_Campaign').hasClass('campaignNavigationTabSelected')
+-&gt; done: CampaignFeaturesSteps.UserSearchesForCreatedCampaignUsingGlobalSearchAndClicksEditCampaign() (22.4s)
+And User navigate to media planning and removes the filter
+[11/21/2014 22:47:20] [V]  Waiting for element: tab_MediaPlan to be visible. ElementSelection: ById
+[11/21/2014 22:47:22] [V]  WaitForElementToBeVisible completed successfully in 1 seconds.
+[11/21/2014 22:47:22] [V]  Operation: Click. ElementId: tab_MediaPlan. Operand: 
+[11/21/2014 22:47:25] [W]  No alert is active.
+[11/21/2014 22:47:25] [V]  SeleniumOperation completed successfully
+[11/21/2014 22:47:25] [V]  Waiting for element: mediaPlanKendoGrid to be visible. ElementSelection: ById
+[11/21/2014 22:47:26] [V]  WaitForElementToBeVisible completed successfully in 1 seconds.
+[11/21/2014 22:47:26] [V]  Checking if element is visible: dgFilterDeleteImg. ElementSelection: ByClass
+[11/21/2014 22:47:26] [V]  Executing jquery: return jQuery('.dgFilterDeleteImg').is(':visible');
+[11/21/2014 22:47:26] [V]  IsVisible is False
+[11/21/2014 22:47:26] [V]  Waiting for element: dgToolbarColumnChooser to be visible. ElementSelection: ByClass
+[11/21/2014 22:47:26] [V]  WaitForElementToBeVisible completed successfully in 0 seconds.
+[11/21/2014 22:47:26] [V]  Executing jquery: var arr = $(".dgColChooserBody input[type='checkbox']"); $.each(arr, function(i,v){if ($(v).is(":checked")) {} else {$(v).prop("checked", true).click().prop('checked',true)} });
+[11/21/2014 22:47:28] [V]  Waiting for element: mediaPlanKendoGrid to be visible. ElementSelection: ById
+[11/21/2014 22:47:28] [V]  WaitForElementToBeVisible completed successfully in 0 seconds.
+[11/21/2014 22:47:28] [V]  Executing jquery: return $('.dgColChooserBody ui li:eq(0)').text()
+[11/21/2014 22:47:28] [V]  Executing jquery: return $('.dgColChooserBody ui li:eq(1)').text()
+[11/21/2014 22:47:28] [V]  Executing jquery: return $('.dgColChooserBody ui li:eq(2)').text()
+[11/21/2014 22:47:28] [V]  Executing jquery: return $('.dgColChooserBody ui li:eq(3)').text()
+[11/21/2014 22:47:28] [V]  Executing jquery: return $('.dgColChooserBody ui li:eq(4)').text()
+[11/21/2014 22:47:28] [V]  Executing jquery: return $('.dgColChooserBody ui li:eq(5)').text()
+[11/21/2014 22:47:28] [V]  Executing jquery: return $('.dgColChooserBody ui li:eq(6)').text()
+[11/21/2014 22:47:29] [V]  Executing jquery: return $('.dgColChooserBody ui li:eq(7)').text()
+[11/21/2014 22:47:29] [V]  Executing jquery: return $('.dgColChooserBody ui li:eq(8)').text()
+[11/21/2014 22:47:29] [V]  Executing jquery: return $('.dgColChooserBody ui li:eq(9)').text()
+[11/21/2014 22:47:29] [V]  Executing jquery: return $('.dgColChooserBody ui li:eq(10)').text()
+[11/21/2014 22:47:29] [V]  Executing jquery: return $('.dgColChooserBody ui li:eq(11)').text()
+[11/21/2014 22:47:29] [V]  Executing jquery: return $('.dgColChooserBody ui li:eq(12)').text()
+[11/21/2014 22:47:29] [V]  Executing jquery: return $('.dgColChooserBody ui li:eq(13)').text()
+[11/21/2014 22:47:29] [V]  Executing jquery: return $('.dgColChooserBody ui li:eq(14)').text()
+[11/21/2014 22:47:29] [V]  Executing jquery: return $('.dgColChooserBody ui li:eq(15)').text()
+[11/21/2014 22:47:29] [V]  Executing jquery: return $('.dgColChooserBody ui li:eq(16)').text()
+[11/21/2014 22:47:29] [V]  Executing jquery: return $('.dgColChooserBody ui li:eq(17)').text()
+[11/21/2014 22:47:29] [V]  Executing jquery: return $('.dgColChooserBody ui li:eq(18)').text()
+[11/21/2014 22:47:29] [V]  Executing jquery: return $('.dgColChooserBody ui li:eq(19)').text()
+[11/21/2014 22:47:29] [V]  Executing jquery: return $('.dgColChooserBody ui li:eq(20)').text()
+[11/21/2014 22:47:29] [V]  Executing jquery: return $('.dgColChooserBody ui li:eq(21)').text()
+[11/21/2014 22:47:29] [V]  Executing jquery: return $('.dgColChooserBody ui li:eq(22)').text()
+[11/21/2014 22:47:29] [V]  Executing jquery: return $('.dgColChooserBody ui li:eq(23)').text()
+[11/21/2014 22:47:29] [V]  Executing jquery: return $('.dgColChooserBody ui li:eq(24)').text()
+[11/21/2014 22:47:29] [V]  Executing jquery: return $('.dgColChooserBody ui li:eq(25)').text()
+-&gt; done: CampaignFeaturesSteps.UserNavigateToMediaPlanningAndRemovesTheFilter() (9.6s)
+And User hides the capacity and availability column from column chooser on media plan
+[11/21/2014 22:47:29] [V]  Waiting for element: dgToolbarColumnChooser to be visible. ElementSelection: ByClass
+[11/21/2014 22:47:29] [V]  WaitForElementToBeVisible completed successfully in 0 seconds.
+[11/21/2014 22:47:29] [V]  Operation: Click. ElementId: dgToolbarColumnChooser. Operand: ByClass
+[11/21/2014 22:47:31] [W]  No alert is active.
+[11/21/2014 22:47:31] [V]  SeleniumOperation completed successfully
+[11/21/2014 22:47:31] [V]  Waiting for element: dgColChooserPanel to be visible. ElementSelection: ByClass
+[11/21/2014 22:47:31] [V]  WaitForElementToBeVisible completed successfully in 0 seconds.
+[11/21/2014 22:47:31] [V]  Waiting for element: dgColChooserPanel to be visible. ElementSelection: ByClass
+[11/21/2014 22:47:32] [V]  WaitForElementToBeVisible completed successfully in 0 seconds.
+[11/21/2014 22:47:32] [V]  Getting Element: key_ColChooser_InventoryCapacity. ElementSelection: ById
+[11/21/2014 22:47:33] [V]  GetElement completed successfully.
+[11/21/2014 22:47:33] [V]  Executing jquery: $('#key_ColChooser_InventoryCapacity').trigger('click')
+[11/21/2014 22:47:33] [V]  Getting Element: key_ColChooser_InventoryAvailable. ElementSelection: ById
+[11/21/2014 22:47:34] [V]  GetElement completed successfully.
+[11/21/2014 22:47:34] [V]  Executing jquery: $('#key_ColChooser_InventoryAvailable').trigger('click')
+-&gt; done: CampaignFeaturesSteps.UserHidesTheCapacityAndAvailabilityColumnFromColumnChooserOnMediaPlan() (5.5s)
+And User downloads Media plan export file in MC format
+[11/21/2014 22:47:35] [V]  Executing jquery: return $('.imageLoading-tiny').is(':visible')
+[11/21/2014 22:47:35] [I]  Progress indicator was visible for 0 seconds
+[11/21/2014 22:47:35] [V]  Waiting for element: ExportBtn to be visible. ElementSelection: ById
+[11/21/2014 22:47:36] [V]  WaitForElementToBeVisible completed successfully in 0 seconds.
+[11/21/2014 22:47:36] [V]  Executing jquery: $('#ExportBtn').trigger('click')
+[11/21/2014 22:47:36] [V]  Waiting for element: MC to be visible. ElementSelection: ById
+[11/21/2014 22:47:37] [V]  WaitForElementToBeVisible completed successfully in 0 seconds.
+[11/21/2014 22:47:37] [V]  Executing jquery: $('#MC').trigger('click')
+[11/21/2014 22:47:40] [V]  Checking if element is visible: add_button. ElementSelection: ByClass
+[11/21/2014 22:47:40] [V]  Executing jquery: return jQuery('.add_button').is(':visible');
+[11/21/2014 22:47:41] [V]  IsVisible is False
+[11/21/2014 22:47:41] [V]  Executing jquery: return $('.imageLoading-tiny').is(':visible')
+[11/21/2014 22:47:41] [I]  Progress indicator was visible for 0 seconds
+[11/21/2014 22:47:46] [V]  Executing jquery: return $("#progress").is(":visible");
+[11/21/2014 22:47:47] [I]  Progress indicator was visible for 0 seconds
+-&gt; done: CampaignFeaturesSteps.UserDownloadsMediaPlanExportFileInMcFormat() (22.1s)
+Then Verify Capacity and Availability column is present in excel file
+-&gt; done: CampaignFeaturesSteps.VerifyCapacityAndAvailabilityColumnIsPresentInExcelFile() (0.0s)
+[11/21/2014 22:48:08] [W]  No alert is active.
+[11/21/2014 22:48:08] [V]  Waiting for element: CorpLogInButton to be visible. ElementSelection: ById
+[11/21/2014 22:48:10] [V]  WaitForElementToBeVisible completed successfully in 1 seconds.
+[11/21/2014 22:48:10] [I]  Found 0 instances of iedriverserver
+[11/21/2014 22:48:10] [I]  Found 2 instances of iexplore
+[11/21/2014 22:48:10] [I]  Found 0 instances of conhost</StdOut>
+        <DebugTrace>SearchProductsRequest:{"SearchCriteria":[{"Keywords":"skyscraper"},{"Type":1},{"ProductTypeIds":[1]},{"Countries":[35743]},{"Languages":[35788]},{"RecommendSource":16,"PagingOptions":null,"RecommendationMode":true,"IncludeSites":true,"IncludeSegments":true},{"DateRange":{"StartDate":"2014-11-22T17:00:00","EndDate":"2014-12-22T16:59:59"},"TimeZoneId":27,"WeekDays":0,"IncludingIntervals":null},{"AdFormatIds":null}],"PagingOptions":{"Skip":0,"Take":60,"SortCriteriaBy":0,"SortDescending":false},"TrackingId":"26578202-eb51-40d1-b7f5-10e2faa9090e","UserId":0}
+a5b2c49e-c822-4131-8918-a9f28eb29061: ActivityId: {0}
+1138ad22-38e4-4772-beba-e66e02172fda: ActivityId: {0}
+GetProductInventoryRequest:{"GetProductInventoryRequestItems":[{"ProductId":114850,"AdFormatId":4,"AdvertiserId":8345,"AgencyId":0,"Segments":null,"DateTimeRange":{"StartDateTimeUtc":"2014-11-22T17:00:00","EndDateTimeUtc":"2014-12-22T16:59:59"},"FrequencyCappingCriteria":{"FrequencyCap":0,"FrequencyIntervalType":0},"NegotiatedRateInUSD":null,"OptOutCriteria":null,"CampaignLineItemId":null,"LineState":null,"CountryId":35743,"IsPremium":false,"UtcOffset":0,"FlightingData":{"DaysOfWeek":{"IsMonday":true,"IsTuesday":true,"IsWednesday":true,"IsThursday":true,"IsFriday":true,"IsSaturday":true,"IsSunday":true},"IncludedIntervals":null},"IsUnReserved":false,"NumberOfInventoryPoints":0,"IsImpressionBasedProduct":true,"RequestId":0}],"CurrencyCode":"USD","IsFromProductSearch":false,"IsSpeedModeFast":false,"QuickModeSelection":1}
+NetworkLocationdId:114850, Name:Microsoft-United States-English-Skyscraper-160x600-I, Availability:41851
+6ba18943-1031-460f-a6ee-ff33175e6318: ActivityId: {0}
+CampaignId: 30815062
+c7866b97-2105-49d6-ab21-71e3676404e0: ActivityId: {0}
+14fbf2ae-14f0-4c57-ba60-024f4a8b9651: ActivityId: {0}
+c741e3be-0d0d-4954-a123-38f2b84ce228: ActivityId: {0}
+CampaignId: 30815062
+e09483b2-dc4c-4a2f-ad53-1b21bde42f46: ActivityId: {0}
+ff799f37-987a-4e2f-a357-cd4d9aa5b57d: ActivityId: {0}
+456d593c-ec52-4691-b1a5-9382ea537586: ActivityId: {0}
+</DebugTrace>
+      </Output>
+      <CollectorDataEntries>
+        <Collector agentName="vstfs:///LabManagement/TestMachine/126336" agentDisplayName="IDCBLRDISP01.fareast.corp.microsoft.com" isFromRemoteAgent="true" uri="datacollector://microsoft/TestImpact/1.0" collectorDisplayName="Test Impact">
+          <UriAttachments>
+            <UriAttachment>
+              <A href="IDCBLRDISP01.fareast.corp.microsoft.com\testimpact.xml">Test Impact Data</A>
+            </UriAttachment>
+          </UriAttachments>
+        </Collector>
+      </CollectorDataEntries>
+      <DataCollectorMessages>
+        <DataCollectorMessage timestamp="2014-11-21T22:48:10.5190266+05:30" dataCollectorUri="datacollector://microsoft/TestImpact/1.0" dataCollectorFriendlyName="Test Impact" agentName="IDCBLRDISP01.fareast.corp.microsoft.com" level="Warning">
+          <Text>IntelliTrace is configured to collect data from IIS, but no Web request was intercepted during the test.  Verify that the "ASP.NET Client Proxy for IntelliTrace and Test Impact" is selected in the diagnostics and data page of your test settings, and that "localhost" or "127.0.0.1" is not being used to contact the server.  You can safely ignore this warning if you are not testing a web application or web service on the IIS server.</Text>
+        </DataCollectorMessage>
+      </DataCollectorMessages>
+    </UnitTestResult>
+  </Results>
+</TestRun>

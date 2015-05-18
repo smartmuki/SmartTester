@@ -1,0 +1,12 @@
+{
+  "name": "SmartTester",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {},
+  "dependencies": {
+    "bson": "^0.3.2",
+    "fs": "0.0.2",
+    "mongoose": "latest",
+    "xml2js": "^0.4.8"
+  }
+}
