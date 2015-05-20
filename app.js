@@ -1,7 +1,9 @@
+/// <reference path="typings/node/node.d.ts"/>
 var xml2js = require('xml2js')
 	, fs = require('fs')
 	, mongoose = require('mongoose');
 
+//mongoose.connect('mongodb://localhost/smartTester');  
 var testSchema = new mongoose.Schema({
 	name: String,
 	lastRunTime: Date,
@@ -28,10 +30,21 @@ var patterns = [
 	
 var parser =  new xml2js.Parser();
 
+var append = function(matchText, p) {
+	console.log('matchedText = ' + matchText);
+    if (!matchText.startsWith(p))
+    {
+        matchText = p + matchText;
+    }
+
+    return matchText;
+};
+
 fs.readFile(pathToLastAccessedFile, function(err, data) {
 	var parsedData = JSON.parse(data);
 	var lastAccessedTime = parsedData.LastAccessedTime;
 	fs.readdir(pathToTrx, function(err, files) {
+		
 		files.forEach(function(fileName){
 			fs.stat(pathToTrx + '/' + fileName, function(err, stats) {
 				var fileCreatedTime = stats.birthtime.getTime();
@@ -44,25 +57,82 @@ fs.readFile(pathToLastAccessedFile, function(err, data) {
 							var testResults = result.TestRun.Results[0].UnitTestResult;
 							testResults.forEach(function(testResult){
 								var test = testResult.$;
-																															
-								var testModel = new TestMongoose();
-								testModel.name = test.testName;
-								testModel.outcome = test.outcome;
-								testModel.lastRunTime = test.startTime;
-								testModel.duration = test.duration; 
-
-								mongoose.connect('mongodb://localhost/smartTester');  
-								testModel.save(function(err, savedInfo){ 
-									console.log(TestMongoose.find());
-									mongoose.disconnect();
-								});
+									mongoose.connect('mongodb://localhost/smartTester');																							
+									TestMongoose.find({name:test.testName,lastRunTime:test.startTime}, function (err, tests) {
+										  if (err) return console.error(err);
+										  //console.log(tests);
+										  if(!(tests && tests.length)) {
+											  	var testModel = new TestMongoose();
+												testModel.name = test.testName;
+												testModel.outcome = test.outcome;
+												testModel.lastRunTime = test.startTime;
+												testModel.duration = test.duration; 
+												testModel.save(function(err, savedInfo){ 
+													console.log(savedInfo);
+													mongoose.disconnect();					
+												});
+										  } else {
+											console.log('test already exists');
+											/* console line - 
+												mongod
+												use smartTester
+												db.showCollections();
+												db.tests.find();
+											*/
+												
+										  	mongoose.disconnect();
+										  }
+									});
 								
 								
 								var output = testResult.Output[0].StdOut[0];
 								var lines = output.split('\n');
 								console.log(lines.length);
+								
+//								var append = function(matchText, p) {
+//								    if (!matchText.startsWith(p))
+//								    {
+//								        matchText = p + matchText;
+//								    }
+//								
+//								    return matchText;
+//								};
+
 								lines.forEach(function(line) {
 									patterns.forEach(function(pattern){
+										var patternsMatched = line.match(pattern);
+
+										if(patternsMatched && patternsMatched.length > 0) {
+											var matchedText = patternsMatched[1];
+
+											if (patternsMatched.length > 2)
+				                            {
+				                                var matchBy = patternsMatched[2];
+				                                switch (matchBy)
+				                                {
+				                                    case "ById":
+				                                        matchedText = append(matchedText.toString(), "#");
+				                                        break;
+				                                    case "ByClass":
+				                                        matchedText = append(matchedText.toString(), ".");
+				                                        break;
+				                                }
+				                            }
+				                            else
+				                            {
+				                                try
+				                                {
+				                                    // This loop will only run incase a jquery command is executed.
+				                                    // return jQuery('.dgFilterDeleteImg').is(':visible')
+				                                    var queryStart = matchedText.indexOf('(');
+				                                    var queryEnd = matchedText.LastIndexOf('.');
+				                                    matchedText = matchedText.substring(queryStart + 2, queryEnd - queryStart - 3);
+				                                }
+				                                catch (e) { }
+				                            }
+											
+											console.log(matchedText +'\n');
+										}
 										// todo
 									});
 								});
