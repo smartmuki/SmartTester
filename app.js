@@ -1,6 +1,7 @@
 /// <reference path="typings/node/node.d.ts"/>
 var xml2js = require('xml2js')
 	, fs = require('fs')
+	, async = require('async')
 	, mongoose = require('mongoose');
 
 //mongoose.connect('mongodb://localhost/smartTester');  
@@ -16,7 +17,11 @@ var testSchema = new mongoose.Schema({
 mongoose.model('test', testSchema);
 var TestMongoose = mongoose.model('test');
 
-var pathToTrx = __dirname + '/TrxDumps';
+mongoose.connect('mongodb://localhost/smartTester');
+
+var parser =  new xml2js.Parser();
+
+var pathToTrx = 'E:\\TrxDumps\\PPE\\Results';
 var pathToLastAccessedFile = __dirname + '/LastAccessedTime.json';
 var patterns = [
             /Waiting for element: ([a-zA-Z0-9-_/+]+) to be visible. ElementSelection: ([a-zA-Z0-9-_/+]+)/,
@@ -30,31 +35,34 @@ var patterns = [
             /Executing jquery: ([\w\W]+)/
 ];
 	
-var parser =  new xml2js.Parser();
-
-var append = function(matchText, p) {
-	console.log('matchedText = ' + matchText);
-    if (!matchText.startsWith(p))
-    {
-        matchText = p + matchText;
-    }
-
-    return matchText;
-};
-
 fs.readFile(pathToLastAccessedFile, function(err, data) {
 	var parsedData = JSON.parse(data);
 	var lastAccessedTime = parsedData.LastAccessedTime;
-	fs.readdir(pathToTrx, function(err, files) {
-		
+	processDirectory(pathToTrx, lastAccessedTime);
+});
+
+function processDirectory(directory, lastAccessedTime) {
+	fs.readdir(directory, function(err, files) {
 		files.forEach(function(fileName){
-			fs.stat(pathToTrx + '/' + fileName, function(err, stats) {
+			fs.stat(directory + '\\' + fileName, function(err, stats) {
+				if(err) { console.log(err); }
+				if(stats.isDirectory()) {
+					 processDirectory(directory + '\\' + fileName, lastAccessedTime);
+				}
+				else {
+					processFile(directory + '\\' + fileName, lastAccessedTime);
+				}
+			});			
+		});
+	});
+}
+
+function processFile(fileName, lastAccessedTime) {
+			fs.stat(fileName, function(err, stats) {
 				var fileCreatedTime = stats.birthtime.getTime();
-				console.log('stats: ' + fileCreatedTime);
 				if(fileCreatedTime > lastAccessedTime) {
 					// This file has not been processed yet.
-					
-					fs.readFile(pathToTrx + '/' + fileName, function(err, data) {
+					fs.readFile(fileName, function(err, data) {
 						parser.parseString(data, function(err, result) {
 							var testResults = result.TestRun.Results[0].UnitTestResult;
 							testResults.forEach(function(testResult){
@@ -62,8 +70,7 @@ fs.readFile(pathToLastAccessedFile, function(err, data) {
 								
 								var output = testResult.Output[0].StdOut[0];
 								var lines = output.split('\n');
-								console.log(lines.length);
-
+								
 								var patternsFound = [];
 								lines.forEach(function(line) {
 									patterns.forEach(function(pattern){
@@ -102,20 +109,18 @@ fs.readFile(pathToLastAccessedFile, function(err, data) {
 													var queryStart = matchedText.indexOf('(');
 													var queryEnd = matchedText.lastIndexOf('\.');
 				                                    matchedText = matchedText.substring(queryStart + 2, queryEnd);
-													//matchedText = matchedText.replace("'", '"');
-													//console.log(matchedText);
 				                                }
 				                                catch (e) { }
 				                            }
 											
 											patternsFound.push(matchedText);
-											//console.log(matchedText +'\n');
 										}
 										// todo
 									});
 								});
-								
-								mongoose.connect('mongodb://localhost/smartTester');																							
+
+
+									//var db = mongoose.createConnection('localhost', 'smartTester');																														
 									TestMongoose.find({name:test.testName,lastRunTime:test.startTime}, function (err, tests) {
 										  if (err) return console.error(err);
 										  //console.log(tests);
@@ -128,39 +133,57 @@ fs.readFile(pathToLastAccessedFile, function(err, data) {
 												testModel.patterns = patternsFound; 
 												testModel.nightly = false;
 												testModel.save(function(err, savedInfo){ 
-													console.log(savedInfo);
-													mongoose.disconnect();					
+													console.log('uploaded for test: ' + test.testName);
+													//mongoose.disconnect();					
 												});
 										  } else {
-											console.log('test already exists');
+											console.log('test already exists: ' + test.testName);
 											/* console line - 
 												mongod
 												use smartTester
 												db.showCollections();
 												db.tests.find();
 											*/
-												
-										  	mongoose.disconnect();
 										  }
 									});
+								
+//		write to a file								
+//								var testDetails = { 
+//									name: test.testName,
+//									outcome: test.outcome,
+//									duration: test.duration,
+//									patterns: patternsFound,
+//									lastRunTime: test.startTime,
+//									nightly: false
+//								};
+//									
+//								var generatedFileName = test.testName + "_" + test.startTime;
+//								generatedFileName = generatedFileName.replace(/:/g, '_').replace(/\+/g,'_').replace(/\./g,'_').replace(/\-/g,'_') + '.json';
+//								fs.writeFile('E:\\TrxDumps\\JsonDumps\\' + generatedFileName, JSON.stringify(testDetails), function(err, data) {
+//									if(err) { console.log(err); }
+//								});
 							});
 						});					
 					});
 									
 					// update the timestamp in lastaccessedtime.json
 					// note: NOT THREAD SAFE
-//					fs.readFile(pathToLastAccessedFile, function(err, data) {
-//						var parsedLatestData = JSON.parse(data);
-//						if(parsedLatestData.LastAccessedTime < fileCreatedTime) {
-//							parsedLatestData.LastAccessedTime = fileCreatedTime;
-//							fs.writeFile(pathToLastAccessedFile, JSON.stringify(parsedLatestData));
-//						}
-//					});
-//					
-					
+					fs.readFile(pathToLastAccessedFile, function(err, data) {
+						var parsedLatestData = JSON.parse(data);
+						if(parsedLatestData.LastAccessedTime < fileCreatedTime) {
+							parsedLatestData.LastAccessedTime = fileCreatedTime;
+							fs.writeFile(pathToLastAccessedFile, JSON.stringify(parsedLatestData));
+						}
+					});					
 				}
 			});
-		});
-	});
-});
+}
 
+
+// If the Node process ends, close the Mongoose connection 
+process.on('SIGINT', function() {  
+  mongoose.connection.close(function () { 
+    console.log('Mongoose default connection disconnected through app termination'); 
+    process.exit(0); 
+  }); 
+}); 
